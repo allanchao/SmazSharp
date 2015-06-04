@@ -3,6 +3,11 @@ SmazSharp - C# Compression For Very Small Strings
 
 *based on [SMAZ](https://github.com/antirez/smaz) -  C implementation by Salvatore Sanfilippo*
 
+> #### [on NuGet](https://nuget.org/packages/SmazSharp/)
+> ```PowerShell
+> Install-Package SmazSharp
+> ```
+
 SmazSharp is a simple compression library suitable for compressing very short
 strings. General purpose compression libraries will build the state needed
 for compressing data dynamically, in order to be able to compress every kind
