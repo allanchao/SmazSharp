@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SmazSharp</id>
+    <version>0.1.0.0</version>
+    <title>SmazSharp</title>
+    <authors>Salvatore Sanfilippo, Gary Sharp</authors>
+    <owners>Salvatore Sanfilippo, Gary Sharp</owners>
+    <licenseUrl>https://github.com/garysharp/SmazSharp/blob/master/COPYING</licenseUrl>
+    <projectUrl>https://github.com/garysharp/SmazSharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Compression for very small strings</description>
+    <releaseNotes>Initial port of Smaz to C#.</releaseNotes>
+    <copyright>Copyright 2006-2009, Salvatore Sanfilippo</copyright>
+    <tags>compression small strings</tags>
+  </metadata>
+  <files>
+    <file src="SmazSharp\bin\Release\SmazSharp.dll" target="lib\net45\SmazSharp.dll" />
+    <file src="SmazSharp\bin\Release\SmazSharp.xml" target="lib\net45\SmazSharp.xml" />
+    <file src="SmazSharp\bin\Release-40\SmazSharp.dll" target="lib\net40\SmazSharp.dll" />
+    <file src="SmazSharp\bin\Release-40\SmazSharp.xml" target="lib\net40\SmazSharp.xml" />
+    <file src="SmazSharp\bin\Release-35\SmazSharp.dll" target="lib\net35\SmazSharp.dll" />
+    <file src="SmazSharp\bin\Release-35\SmazSharp.xml" target="lib\net35\SmazSharp.xml" />
+    <file src="SmazSharp\bin\Release-30\SmazSharp.dll" target="lib\net30\SmazSharp.dll" />
+    <file src="SmazSharp\bin\Release-30\SmazSharp.xml" target="lib\net30\SmazSharp.xml" />
+    <file src="SmazSharp\bin\Release-20\SmazSharp.dll" target="lib\net20\SmazSharp.dll" />
+    <file src="SmazSharp\bin\Release-20\SmazSharp.xml" target="lib\net20\SmazSharp.xml" />
+  </files>
+</package>

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace SmazSharp
 {
+    /// <summary>
+    /// Compression for very small strings
+    /// </summary>
     public static class Smaz
     {
         #region Lookup Data
@@ -166,16 +169,6 @@ namespace SmazSharp
             new byte[] {32, 109, 97}, new byte[] {103, 101}, new byte[] {120}, new byte[] {101, 32, 99}, new byte[] {109, 101, 110}, new byte[] {46, 99, 111, 109}
         };
         #endregion
-
-        /// <summary>
-        /// Compresses an ASCII string to a Smaz encoded byte array
-        /// </summary>
-        /// <param name="Input">String to compress</param>
-        /// <returns>Compressed data as a byte array</returns>
-        public static byte[] Compress(string Input)
-        {
-            return Compress(Encoding.ASCII.GetBytes(Input));
-        }
 
         /// <summary>
         /// Compresses a byte array using Smaz encoding
@@ -364,13 +357,23 @@ namespace SmazSharp
         }
 
         /// <summary>
+        /// Compresses an ASCII string to a Smaz encoded byte array
+        /// </summary>
+        /// <param name="Input">String to compress</param>
+        /// <returns>Compressed data as a byte array</returns>
+        public static byte[] Compress(string Input)
+        {
+            return Compress(Encoding.ASCII.GetBytes(Input));
+        }
+
+        /// <summary>
         /// Decompresses a Smaz encoded byte array and returns the original string
         /// </summary>
         /// <param name="Input">Smaz encoded byte array</param>
         /// <returns>Decompressed string</returns>
         public static string Decompress(byte[] Input)
         {
-            // Instanciate an output buffer
+            // Instantiate an output buffer
             using (MemoryStream output = new MemoryStream(Input.Length * 3))
             {
                 for (int i = 0; i < Input.Length; i++)
@@ -378,12 +381,12 @@ namespace SmazSharp
                     switch (Input[i])
                     {
                         case 254:
-                            // Verbtim Byte
+                            // Verbatim Byte
                             output.WriteByte(Input[i + 1]);
                             i++;
                             break;
                         case 255:
-                            // Verbtim Bytes
+                            // Verbatim Bytes
                             output.Write(Input, i + 2, Input[i + 1]);
                             i += Input[i + 1] + 1;
                             break;
